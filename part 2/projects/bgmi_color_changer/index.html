@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .buttons{
+            border: 2px solid black;
+            height: 5rem;
+            width: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* to remove pointer evnet type and get clcik evnet type instead */
+            /* touch-action: none; */  
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #pink{
+            background-color: pink;
+        }
+    </style>    
+    
+</head>
+<body>
+    <div id="box">
+        <div class="buttons" id="red">red</div>
+        <div class="buttons" id="green">green</div>
+        <div class="buttons" id="yellow">yellow</div>
+        <div class="buttons" id="pink">pink</div>
+    </div>
+</body>
+<script src="./script1.js"></script>
+</html>

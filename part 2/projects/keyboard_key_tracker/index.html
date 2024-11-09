@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .table{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(182, 29, 29, 0.1);
+            padding: 10px;
+        }
+        .table thead th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 12px;
+    text-transform: uppercase;
+    padding: 10px;
+
+}
+.table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+    </style>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <div id="box">
+        <h1 class="text">Press a key and see Magic!</h1>
+        <div id="table"></div>
+    </div>
+    
+</body>
+<script>
+    window.addEventListener('keydown',(e)=>{
+        console.log(1);
+        console.log(e.key);
+        e.preventDefault(); // default behavior rok diya jo bhi honey wala tha us partticular key ko dbaaney se like f5 se refesh and f12 se broweser dev tools
+
+        
+        if(e.key==='F12'){
+            e.preventDefault();
+            // alert('Developer tools not allowed in this website! Developer hai k?'); 
+            // window.close() // hihi close the whole window /tab
+        }
+        
+        const table = document.getElementById('table');
+        table.innerHTML =`<table class='table'>
+            <thead>
+            <tr>
+                <th>Key</th>
+                <th>KeyCode</th>
+                <th>Code</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <td>${e.key===' '?'Space':e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+            </tbody>
+
+              </table>
+              `
+
+    })
+
+    document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    alert("Right-click is disabled. | Dev Tools not allowed , neither from doing f12") })
+
+    
+
+
+</script>
+</html>

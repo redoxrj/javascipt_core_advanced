@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;  color: #fff;">
+    <h1>Hello World</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // setTimeout and setInterval both are browsers apis / web apis not a part of pure js , they go from  call stack to task queue and wait there to go back to the task queue jab unka time aajata hai execute honey ka
+
+    // both are part of asynchronous code / non blocking code , apart from web requests lik fetch/axios api request/db request as main thread/main event block ni hota h , call stack mein hmesha kcuh na kuch rhta synchronus part ka kuch na kuch excecute rhney/honey ke liye
+
+    // also thier clear methods
+
+    // default engine of js is pure synchronous but due to some apis like above (setTimeout and setInsterval) it becomes asynchronous in a completed js runtime like browser
+
+    const printConsole = ()=>{
+     console.log("rajnish is back yo after 3 seconds");
+
+    }
+    setTimeout(()=>{
+     console.log("rajnish is back yo after 3 seconds");
+     
+    },3000)
+    // setTimeout(printConsole,3000)
+
+    const changeH1 =(str)=>{
+    const h1 = document.querySelector('h1');
+    h1.innerHTML=`${str} ka world hai`
+        
+    }
+   // passing the handler/callback function/ fuction without name reference qnd the 3rd argument/paramerter as well
+    const changeName=setTimeout(changeH1,4000,'Raju')  // ek baar setTimeout likha diya mtlb wo execute toh hoke rhega , teer kmaan se nikal chuka , yha bs uka refernece hold krlia
+
+    const stop = document.querySelector('#stop');
+
+    // now to remove that timeout
+    stop.addEventListener('click',()=>{
+      clearTimeout(changeName)
+    })
+
+    setInterval(printConsole,4000)
+
+
+
+
+
+
+   
+
+
+
+
+
+</script>
+</html>

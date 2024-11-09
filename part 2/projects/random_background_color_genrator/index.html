@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;  color: #fff;">
+    <h1>Random Color Generator | unlimited</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    const body = document.querySelector('body')
+    const generateRandomColor =()=>{
+        let hexRangeValue ='0123456789ABCDEF'
+        let hexValue='#'
+
+        for(let i=0;i<6;i++){
+            const randNumer = Math.floor( Math.random()*16 )
+            hexValue+=hexRangeValue[randNumer]
+        }
+        // console.log(hexValue);
+        // return hexValue
+        body.style.backgroundColor = hexValue
+        
+    }
+
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    stop.disabled=true
+
+    let gernrate
+
+    start.addEventListener('click',()=>{
+         gernrate =setInterval(generateRandomColor,1000)
+         start.disabled=true
+        stop.disabled=false
+
+    })
+    stop.addEventListener('click',()=>{
+        clearInterval(gernrate)
+        stop.disabled=true
+        start.disabled=false
+
+
+    })
+
+   
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #121212;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+       #box{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+       #message{
+        display: flex;
+        gap: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>BMI CALCULATOR</h1>
+        <form action="" method="post" >
+            <label for="height">Enter height in cm: </label>
+            <input type="text" name="height" id="height">
+            <label for="weight">Enter weight in kg: </label>
+            <input type="text" name="weight" id="weight">
+            <button style="margin-left: 20px;">Submit</button>
+        </form>
+        <label for="result">Result: </label>
+        <div id="message">
+        <div id="result"></div>
+        <div id="result-m"></div>
+
+        </div>
+    </div>
+    
+    
+</body>
+<script src="./script2.js" ></script>
+</html>

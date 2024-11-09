@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #141414; color: aliceblue;">
+    <div id="parent">Parent
+
+        <div class="google" style="margin-top: 20px;"><a href="https://www.google.co.in/" id="google">google</a></div>
+
+    </div>
+    
+</body>
+<script>
+    const parent = document.querySelector('#parent');
+    const google = document.querySelector('#google');
+
+    parent.addEventListener('click',(e)=>{
+        // console.log(e);
+        // console.log(e.type);
+        // console.log(e.target);
+        // console.log(e.target.parentNode);
+        // console.log(e.target.id);
+        // console.log(e.target.tagName);
+        // console.log(e.srcElement);
+        console.log('Parent Clicked');
+        
+
+    },false) // by default false (event propagation)
+
+    google.addEventListener('click',(e)=>{
+        console.log('google Clicked');
+        e.preventDefault(); // stopping default behavior | anchor tag in this case , the tag on which event is occurred
+
+        e.stopPropagation() // stops the propagation ,this works only if event propagation is set to false, jo ki hota bhi hai by default
+        
+
+    },false)
+
+    //event propagation -> two typees ->1) event bubbling(false) ->inside to outside (child to parent) like a bubble
+    // 2) event caputuring(true) -> parent to child
+</script>
+</html>

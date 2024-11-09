@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: #fff;
+        }
+        .yoyo{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="week">
+        <!-- dkjfkdfjkdf -->
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+
+
+        <div class="days">Thrusday</div>
+    </div>
+</body>
+<script>
+    const week = document.querySelector('#week');
+    // console.log(week);
+    // console.log(week.children); // parent to children
+    // console.log(week.children[1]);
+    // console.log(week.children[1].innerHTML);
+
+    // for(let i=0;i<week.children.length ;i++){
+    //     console.log(week.children[i].innerHTML);
+    //     if(i%2===0){
+    //         week.children[i].style.backgroundColor='red'
+    //     }
+        
+    // }
+    // const dayOne = document.querySelector('.days')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement); // child to parent element
+    // console.log(dayOne.nextElementSibling);
+
+    // console.log(week.firstElementChild);
+    // console.log(week.lastElementChild);
+
+    console.log(week.childNodes); //.children and .childNodes are different , one gives html collection and is easy while childNodes gives NodeList and is comlelex, as line bracks and comments are taken into account starting from the parent element/node  (line bracks and comments are considered to ba node in complex DOM structure)
+  
+    //NOTE : more than 1 line break consecutive doesnot count 
+    
+
+
+    
+    
+</script>
+</html>

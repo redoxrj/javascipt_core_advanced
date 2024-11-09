@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #121212;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const div = document.createElement('div');
+        console.log(div);
+        div.setAttribute('title', 'title hai');
+        div.className='yoyo'
+        div.id='acha'
+        div.style.backgroundColor='green';
+        div.style.padding='12px';
+        // div.innerText='Achaaa jiii'  //pelhy value laaygea phir usey overwrite karea , less opitimize , coz have to traverse the whole dom tree
+        const text = document.createTextNode('Achaaa jiii'); // more opitimized
+        div.appendChild(text) // as crteating a text node and appending it , no need to traverse the whole dom tree
+
+        // now finally append the element to the the document.bod
+        document.body.appendChild(div)
+    </script>
+    
+</body>
+</html>

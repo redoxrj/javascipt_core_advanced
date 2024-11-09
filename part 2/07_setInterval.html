@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;  color: #fff;">
+    <h1>Hello World</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    const printConsole = ()=>{
+     console.log("rajnish is back yo after 3 seconds");
+
+    }
+    setInterval(()=>{
+     console.log("rajnish is back yo after 3 seconds");
+     
+    },3000)
+    // setInterval(printConsole,3000)
+
+    const changeH1 =(str)=>{
+    const h1 = document.querySelector('h1');
+    h1.innerHTML=`${str} ka world hai`
+        
+    }
+  
+    // const changeName=setInterval(changeH1,1000,'Raju') 
+    // const changeName2=setInterval(changeH1,2000,'Acha ji htt') 
+    let changeName,changeName2
+
+    const stop = document.querySelector('#stop');
+
+    // now to remove that interval
+    stop.addEventListener('click',()=>{
+      clearInterval(changeName)
+      clearInterval(changeName2)
+    })
+
+    
+    const start = document.querySelector('#start');
+    start.addEventListener('click',()=>{
+         changeName=setInterval(changeH1,1000,'Raju') 
+         changeName2=setInterval(changeH1,2000,'Acha ji htt') 
+    })
+
+
+   
+
+
+
+
+
+</script>
+</html>
