@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            color: white;
+        }
+        .button{
+            height: 100px;
+            width: 100px;
+            text-align: center;
+        }
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #black{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <h1>Background Color Switcher</h1>
+        <div id="box">
+            <div class="button" id="red">red</div>
+            <div class="button" id="yellow">yellow</div>
+            <div class="button" id="green">green</div>
+            <div class="button" id="blue">blue</div>
+            <div class="button" id="black">black</div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const buttons =  document.querySelectorAll('.button')
+    // console.log(buttons);
+    const body = document.querySelector('body')
+    // console.log(body);
+
+    buttons.forEach((button)=>{
+        // console.log(button);
+        button.addEventListener('click',(e)=>{
+            console.log(e);
+            console.log(e.target);
+            console.log(e.target.id);
+            console.log(e.target.className);
+
+            body.style.backgroundColor=e.target.id
+            
+
+        })
+        
+
+    })
+    
+    
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #121212; color: #fff;">
+
+    <ul class="language">
+        <li>javascipt</li>
+
+    </ul>
+
+
+    
+</body>
+<script>
+
+// CREATE
+    function addLang(name,color){
+
+        const li = document.createElement('li')
+        li.style.color=color
+        li.innerHTML=name
+        // li.outerHTML=`<li>${name}</li>` // outerHTML is used for replacing existing dom element html with new one ,but here it is not presnet in dom till now
+        // li.innerText=name
+        const parent =  document.querySelector('.language')
+        parent.appendChild(li)
+
+    }
+    addLang('python','yellow')
+
+      function addLangOpti(name,color){
+
+        const li = document.createElement('li')
+        li.style.color=color
+        // li.innerHTML=name
+        // li.innerText=name
+        li.appendChild(document.createTextNode(name))
+        const parent =  document.querySelector('.language')
+        parent.appendChild(li)
+
+    }
+    addLangOpti('GO lange','red')
+    addLangOpti('C#','green')
+
+
+    //EDIT
+
+    const python = document.querySelector('li:nth-child(2)')
+    // console.log(python);
+    // python.innerHTML='JAVA'
+
+    // python.outerHTML ='<li>JAVA</li>' // here working coz already existing
+
+    const liNew = document.createElement('li')
+    liNew.appendChild(document.createTextNode('JAMA'))
+    python.replaceWith(liNew)
+
+    //remove
+
+ const c = document.querySelector('li:last-child')
+ c.remove()
+
+    
+
+</script>
+
+
+</html>

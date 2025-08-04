@@ -1,0 +1,6 @@
+// chai or code pasrt 2 js //https://www.youtube.com/watch?v=_TjtAyMkiTI&t=35730s
+
+XMLhttpRequest  5:00:00
+bind
+getters and setters
+

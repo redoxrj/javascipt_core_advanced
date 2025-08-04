@@ -124,7 +124,7 @@ const promise4 = new Promise((resolve, reject)=>{ // This is a constructor call 
 promise4.then((value)=>{
     console.log(value);
     console.log(value?.username);
-    return value?.username
+    return value?.username  // if insedie a .then of a promise if it is returning smething , wthat will another promise and we have to again consume it as a whole
     
 }).catch((error)=>{
     console.log(error);
@@ -161,12 +161,12 @@ const promise5 = new Promise((resolve,reject)=>{
 
 })
 
-// we can handle a promise either by 1) .then.catch or 2) by async/await func
+// we can handle/consume a promise either by 1) .then.catch or 2) by async/await func
 // async functions wait for that async kaam to happen and nicehy ni jaaeny deta code flow  us function mein na ki whole code mein | await krke rkhta hai parrtiular promise jab tak wo resolve ya rejcet ni hotajat , resolve hua toh async function ke try blcok mein,rejcet hua toh async function ke catch blcok mein jaayega
 
 // async function handy when hum chahahtey hai jab tak db connect na ho nichey koi kaam na ho
 
-// that means hum real world mein promise consume krtety hai mostly like in backend sql server db se koi query ka response ka await krna yaani promise ka await krna | yaani resolve or rejcet ki value whi log set kretey ahi kisi particular query ke liye maybe using seqelize libaray for sql
+// that means hum real world mein promise consume krtety hai mostly like in backend sql server db se koi query ka response ka await krna yaani promise ka await krna | yaani resolve or rejcet ki value whi log set kretey ahi(using libaray like sequelize for sql,mongoose for mongoDB) kisi particular query ke liye maybe using seqelize libaray for sql
 
 async function handleOrConsumePromise5 (){    
             try {
@@ -192,7 +192,7 @@ externalPromise.then((response)=>{
     return   response.json() // .json also takes time and return another promise so we have to agian use .then
     //.json() is specific to the Fetch API and It’s used when you fetch data from a network resource, and you want to extract the JSON body content directly from a Response object and returns a Promise.
 
-}).then((data)=>{
+}).then((data)=>{ // chiananble/thainable hihi
     console.log(data);
 
 }).catch((error)=>{

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="conatainer">
+        <h1>Images</h1>
+        <div id="images">
+            <ul id="ul-hu">
+                <li><img id="nature" src="https://images.pexels.com/photos/32896958/pexels-photo-32896958.png" alt="rajuu" width="120px" ></li>
+                <li><img id="nature" src="https://images.pexels.com/photos/32006759/pexels-photo-32006759.jpeg" alt="rajuu" width="150px" ></li>
+                <a id="google" href="https:google.com" target="_blank" style="color: red;">GO TO GOOGLE</a>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    function natureClicked(){
+        alert("nature cliecked")
+    }
+
+    // document.getElementById('nature').onclick = function(){
+    //     alert("nature cliecked")
+    // }
+    // document.getElementById('nature').onclick =natureClicked //passing reffernce of the function like telling it what to do on clicking, i mean the fucntion
+
+    document.getElementById('nature').addEventListener('click',(e)=>{
+        // console.log(e);
+        // console.log(e.target);
+        // console.log(e.target.id);
+        // console.log(e.timeStamp);
+        
+        alert("nature cliecked")
+        console.log("nature cliecked");
+
+
+    },true)
+
+    document.getElementById('ul-hu').addEventListener('click',(e)=>{
+        console.log("ul the parent clicked");
+        // e.stopPropagation() // prppgation stop karney ke liye at ppint/anytime
+        
+    },true) // by default false hi hota hai (evnet bubbling)
+    // event propagtion -> 1 (evnet bubbling)->bottom to top ,2 (event capturing) top to bottom
+
+    document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault() // kisi bhi html tag ka default behavior/functionlaity stop krney ke liye
+        console.log('gogoled cleick');
+        
+
+    })
+
+      const img = document.querySelectorAll('img')
+      console.log(img);
+      img.forEach((ele)=>{
+        ele.addEventListener('click',(e)=>{
+            console.log(e);
+            console.log(e.target);
+            console.log(e.target.parentNode);
+            const parent = e.target.parentNode
+            parent.remove()
+            
+        })
+
+      })
+    
+
+</script>
+</html>

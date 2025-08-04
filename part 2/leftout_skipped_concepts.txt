@@ -1,5 +1,0 @@
-// chai or code //https://www.youtube.com/watch?v=_TjtAyMkiTI&t=35730s
-
-bind
-getters and setters
-

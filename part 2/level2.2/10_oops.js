@@ -1,4 +1,4 @@
-// Js is a a purely prototype based language || technically no classes in it  , but kind of sugar added to like like classes
+// Js is a a purely prototype based language || technically no classes in it  , but kind of syntacitic sugar added to like like classes
 
 // Objects in js are nothing but collection of properties(variales,constants) and methods(functions)
 
@@ -9,7 +9,7 @@ const user ={
     loggedInCount : 12,
     isLoggedIn : true,
 
-    getUserDetails : function(){
+    getUserDetails : function(){  // tehse are methods
         console.log(`user details are username : ${user.username} `);
         console.log(`user details are username : ${this.username} `); // same answer both lines ; this means current contex i,e, user object here
         console.log(this);
@@ -74,7 +74,7 @@ console.log(user2.greetings()) //
 
 //NOTE : this keyword likhtey hai 4 steps hoti hai :(refer 7:37  at https://www.youtube.com/watch?v=_TjtAyMkiTI&t=35730s)
 // 1 . ek empty object {} ban jaayayega copi keh lo particlat use context ke liye
-//2 . arguments/paramters recinve/ pass on hog , new keyword(construtor fuction) k kaarna
+//2 . arguments/paramters  recinve/ pass on hog , new keyword(construtor fuction) k kaarna
 // 3 . arguments set ho jayagei
 // 4 . value humein mil jaayegi yaani wo empty object jsime ab kuch  bhar gya hai yaani kuch properitrs set hogai hai (last mein new cretaed object/after modiftaion de diya jaataa hai)
 

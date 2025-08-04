@@ -31,16 +31,17 @@ function userAndScore (user,score){
     this.score = score
 }
 
-// addding a property exlicityely in a which a function is there (function ke ander function) though .prototype method
+// addding a property explicityely in a which a function is there (function ke ander function) though .prototype method
+// cusotm function
 // array.map()   => array.prototype.map() // itna likhna jarroat ni
 userAndScore.prototype.incrementScore =function (){
-    this.score ++  // this yaani jis ne bhi call kiya hoga uska krdo
+    this.score ++  // this yaani jis //jiney ne bhi call kiya hoga uska krdo(uska context)
     console.log(`your updated Score: ${this.score}`);
 
 }
 userAndScore.prototype.yoyo =true
 
-// const user1 =  userAndScore('rajish',40) // thats why new keyword is important here exlicityely difined function ko defined krke laata ahi tabhi usko pta chlata hai wo walein functions
+// const user1 =  userAndScore('rajish',40) // thats why new keyword is important here explicityely difined function ko defined krke laata ahi tabhi usko pta chlata hai wo walein functions// jo defult ni bnein they
 const user1 =  new userAndScore('rajish',40) // nothing just
 const user2 = new userAndScore('miena',20) // new instances of that function
 

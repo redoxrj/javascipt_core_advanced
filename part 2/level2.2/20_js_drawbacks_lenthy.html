@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+ <!-- in plain html onclick="addValueEverywhere()" is valid, {} is not valid syntax. It's specific to React JSX. while onclick={addValueEverywhere} is valid oin react jsx, as we pass the reference of the func when clciked not execute them imdediatly on rdner of button  -->
+
+
+ <!-- Also note : 1. HTML attributes are case-insensitive, so both onClick and onclick will work the same.  2. In JavaScript, DOM properties are case-sensitive, and the correct property is always lowercase: onclick. Using onClick (uppercase "C") in JavaScript will not work  3.  In React, the event handler uses camelCase onClick, as React's event system is modeled after JavaScript conventions.  Hence , use onclick in plain JavaScript and onClick in React or JSX.-->
+    <button id="main-box" onclick="addValueEverywhere()" >`Value : ${15} `</button>
+    <p id="box"  >`Value : ${15} `</p>
+    <h1 id="box">`Value : ${15} `</h1>
+    <h3 id="box">`Value : ${15} `</h3>
+    <div id="box">`Value : ${15} `</div>
+    
+</body>
+<script>
+    let counter =15
+    const box = document.querySelector('#main-box');
+    const p = document.querySelector('p');
+    const h1 = document.querySelector('h1');
+    const h3 = document.querySelector('h3');
+    const div = document.querySelector('div');
+    // box.addEventListener('click',()=>{
+    //     counter++  // counter = counter + 1
+    //     // console.log(counter++);
+        
+    //     box.innerHTML =`Value  : ${counter}`
+    //     p.innerHTML =`Value  : ${counter}`
+    //     h1.innerHTML =`Value  : ${counter}`
+    //     h3.innerHTML =`Value  : ${counter}`
+    //     div.innerHTML =`Value  : ${counter}`
+
+    // })
+
+    function addValueEverywhere (){
+        console.log("hi");
+        
+        counter++ 
+        box.innerHTML =`Value  : ${counter}`
+        p.innerHTML =`Value  : ${counter}`
+        h1.innerHTML =`Value  : ${counter}`
+        h3.innerHTML =`Value  : ${counter}`
+        div.innerHTML =`Value  : ${counter}`
+
+    }
+
+    // hence humein dekha ek variable so kyi baar use ho rkha hai/ui mein dikh rha hai har baar chnage krkney ke live/ har element ko select kro jha wo use hua hai and then on click mein sabumein innerHTML lgaoo ! bekaar hai , issye bhidiya react mein useState hook use krney se ek hi baar har jgh re render hoke state badal jaata uska har jgh automatically that's why we need React // bahut tuff or lengthy kaaam hai pure vanilla js mein
+</script>
+</html>

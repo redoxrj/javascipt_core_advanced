@@ -70,6 +70,57 @@ const addTwo =(num1,num2)=>({username :"raju",sum:(num1+num2)}) //#best
 
 console.log(addTwo(1,2));
 
+// --------------laetst update -------------------//
+
+// // const addTwo = (num1,num2)=> num1 +num2
+// const addTwo = (num1,num2)=> (num1 +num2)  // will work same but better/best practice to use parrentheshis coz
+// parrentheshis () lgaaney se ek alg se block ban jaata hai ,yaani usmein bhi kaam kiya jaa skta hai
+
+// const returnObject = (num1,num2) => ({user :"raju"})  // object return krwatey samy parenthis toh legega  wrna undefined mielga
+
+
+// console.log(addTwo(1,5));
+// console.log(returnObject(1,5));
+
+
+
+
+//     -----------------------latest update------------------------//
+// let name ="haju"
+// const user= {
+//     name : "rajnish",
+//     age :18,
+//     greet : function(){
+//         // console.log(`hello dear ${name}`);
+//          // js looks for exactly same variable name , "name" in this case either in locally or outer scope , if found access it otherwise error, note : the name key in user object is not a variable ,that's why getitng error here till not using actual name variable in outer/global scope
+//         console.log(`hello dear ${this.name}`);
+        
+//     }
+// }
+// // user.greet ="yoyo"
+// console.log(user.greet());
+// user.name="sita"
+// console.log(user.greet());
+
+// noTE :  this object mein use kar skety hai yaani log(this) krneegy toh wo current conteext bta dega/ yaani current conetxt ka object hi ppora print kr dega and also object ke key ke naam se value print kar nikaal/print kr rkstey but this doesnt woek in a declared function variable like :
+
+// function one (){
+//     let a  =55
+
+// qunki ye normal function tha wo this object print ho jayega kuch na kuch ant sant yaani present toh hota hai actully mein this object in normal functions
+// on contrary , arrow funcrtion mein agar log(this) krnegy toh empty object aaygea , yaani arrow func mein this object prenset ni nota actual mein, that's why not able to us in object key : value as arrow function
+
+//     // console.log(this);  
+//     console.log(this.a);
+    
+// }
+// one()
+
+// ARROW function ka major advantage ki usmien impicit return ka co=ncept hota hai/use kar skety h, jbki normal funtion mein wo ni hogta
+// yaani {} or return keyword likney ki jrrorat ni hota wo maan/assumen kr leta hai ki muje implicitely retrun krdega hai agar same line mein likha hai toh
+ 
+
+// browser mein global object yaani this(current conetxt) window object hota hai/presnet hota hai , unlike nodejs(run time enviroemts ) mein glvoal object by default empty object hota hai , agar consloe.log(this) kreaarey toh yaani presnet ni hota global object
 
 
 

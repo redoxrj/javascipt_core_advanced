@@ -46,7 +46,16 @@ console.log(user2);
 console.log(user2.encryptPassword());
 
 
-// NOTE : alaywasy remember har scope ka apna this object hota hai and by default wo empty object rehnta hai
+// NOTE : alaywasy remember har scope ka apna this object hota hai and by default wo empty object rehnta hai -->this lline is partially incorrect and can be misleading in JavaScript.
+
+// | **Context / Scope**                  | **What `this` refers to**                                                               |
+// | ------------------------------------ | --------------------------------------------------------------------------------------- |
+// | **Global scope (non-strict)**        | `this` refers to the **global object** (`window` in browser, `global` in Node.js).      |
+// | **Global scope (strict)**            | `this` is `undefined`.                                                                  |
+// | **Function (non-arrow, non-strict)** | `this` depends on **how the function is called** (not where it's written).              |
+// | **Arrow functions**                  | `this` is **lexically inherited** from the parent scope (does not bind its own `this`). |
+// | **Class constructor**                | `this` refers to the newly created object when you use `new`.                           |
+// | **Object methods**                   | `this` refers to the object calling the method.                                         |
 
 
 

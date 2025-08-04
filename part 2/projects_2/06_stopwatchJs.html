@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #343434;
+            color: #fff;
+        }
+        #box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <div id="container">
+    <h1><input id="inputVal" type="text" value="0"></h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="reset">reset</button>
+
+    </div>
+    </div>
+    
+</body>
+<script>
+    const start =document.querySelector('#start')
+    const stop =document.querySelector('#stop')
+    const reset =document.querySelector('#reset')
+    const inputVal =document.querySelector('#inputVal')
+    let startRef=null
+
+    function increaseVal(){
+        inputVal.value = Number(inputVal.value) +1
+    }
+
+    start.addEventListener('click',()=>{
+        if(startRef===null){
+        startRef=setInterval(increaseVal,1000)
+        }
+
+    })
+    stop.addEventListener('click',()=>{
+        clearInterval(startRef)
+        startRef=null
+    })
+    reset.addEventListener('click',()=>{
+        clearInterval(startRef)
+        startRef=null
+
+        inputVal.value=0
+    })
+</script>
+</html>

@@ -1,7 +1,8 @@
 const arr= [1,2,3,4,5]
 const str ='Rajnish Kumar'
 
-// for of loop
+// for of loop  ->array,string,Map teeno pe lag skta hai coz const itertor of OBJECT(any) ,ye teeno iterables hai isilye
+// for of loop ,array ke ander dirct value rerturn krta hai
 for (const element of arr) {
     console.log(element);
 }
@@ -37,7 +38,7 @@ const user={
 //     console.log(`${key} and ${value}`);
 // }
 
-// thats' why for in loop for objects
+// thats' why for in loop for objects(best) and also for arrays -> always return keys not value in both objects and array
 for(const key in user){
     console.log(`key: ${key} and value : ${user[key]}`);
     console.log(user.key); // this will not work will give undefined
@@ -116,12 +117,12 @@ users.forEach((e)=>{
 })
 
 
-const printNames =(names)=>{
-    console.log(names);
+const printName =(name)=>{
+    console.log(name);
     
 }
 
-yoyo.forEach(printNames)  // refernce diya hai alreyad defined function printNames ka (as an argument pass kiya hai) naaki () cal kiya hai
+yoyo.forEach(printName)  // refernce diya hai alreyad defined function printNames ka (as an argument pass kiya hai) naaki () cal kiya hai
 // ye printNames bta rha hai ki kya kaam krna hai
 
 

@@ -45,7 +45,7 @@ console.log(str1===str2); // true coz but js compares content(case sensitive+oth
  const bcd={a1:1,a2:2}
 
 console.log(JSON.stringify(abc)); // stringified data of object/json
- console.log(JSON.stringify(abc)===JSON.stringify(bcd)); //true always
+ console.log(JSON.stringify(abc)===JSON.stringify(bcd)); //true always  -> coz JSON.stringify se string data type mein badal gya , and string jo ek primitive data type hai content check hota hai bss equal/same hai ki ni
  
 
  const user={
@@ -53,7 +53,7 @@ console.log(JSON.stringify(abc)); // stringified data of object/json
     age:10,
     name :"yoyo" // last declared will be the final value
  }
- console.log(user); // and we will get single key-value pair of name
+ console.log(user); // and we will get single key-value pair of final last declared name
  console.log(user.name);
 
  const abcd={a1:1,a2:2}
@@ -85,10 +85,10 @@ console.log(Object.keys(user2)); // will return in array
 console.log(Object.values(user2)); // also will return in array
 
 const keys =(Object.keys(user2));
-// ke baar objects ki pta lag jaaye toh key ki values automatic pta lag jajyegi us object mein 
+// ek baar objects ki keys pta lag jaaye toh unki values automatic pta lag jajyegi us object mein 
 
 keys.forEach((element)=>{
-//  console.log(user2.element);
+//  console.log(user2.element);  // will not work this way while acessing using key
  console.log(user2[element]);
  
 })

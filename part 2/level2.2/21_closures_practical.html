@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #313131;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+    
+</body>
+<script>
+    // document.getElementById('orange').addEventListener('click',()=>{
+    //     document.body.style.backgroundColor ='orange'
+    // })
+    // document.getElementById('green').addEventListener('click',()=>{
+    //     document.body.style.backgroundColor ='green'
+    // })
+
+    function colorHandler (color){
+
+     document.body.style.backgroundColor = color
+
+
+    }
+
+    function colorHandler2 (color){
+
+        return function (){
+            // preactcal exmplae of closue that saved us as inner func is returing from outer func alog with all lexical scope associated with its outer func
+        // closure: remembers the value of `color`
+            document.body.style.backgroundColor = color
+        }
+
+
+
+    }
+   // here background color change automatically on page load because you're calling the function colorHandler('orange') and colorHandler('green') immediately(code mein whi par execute hogya lol), instead of passing a function reference to addEventListener.
+
+    // document.getElementById('orange').addEventListener('click',colorHandler('orange'))
+    // document.getElementById('green').addEventListener('click',colorHandler('green'))
+  
+    //NOW clousures appliation as it saving us now ,since addEventListener needs a function refrence whhen on clciking(so we need to pass a handler that returns a func)
+   
+    document.getElementById('orange').addEventListener('click',colorHandler2('orange'))
+    document.getElementById('green').addEventListener('click',colorHandler2('green'))
+//
+// 2. listenerFunction ( function) – required of addvenetlistner func
+// This is the function to be executed when the event happens.
+// You must pass a reference to a function, not call it immediately.
+
+
+// corrret: element.addEventListener('click', () => console.log('clicked'));
+// Wrong(runs immediately): 
+// element.addEventListener('click', console.log('clicked')); // this runs immediately and passes `undefined`
+
+
+
+// ----------------------------------------
+
+    //below is genreal more use actually in real word can ignore for this example of clousres
+    // document.getElementById('orange').addEventListener('click',()=>colorHandler('orange'))
+    // document.getElementById('green').addEventListener('click',()=>colorHandler('green'))
+</script>
+</html>

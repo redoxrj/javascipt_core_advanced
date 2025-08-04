@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #121212;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        #container{
+            height: 100vh;
+            width: 90vw;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+        #main{
+            background-color: rgb(93, 91, 91);
+            height: 50vh;
+        }
+        #box{
+            width: 30vw;
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="box">
+            <div id="header">
+            <h2>Number Guessing game</h2>
+            <p>Try guessing Natural numbers between 1 and 100 </p>
+            <p>You have 10 attempts to guess the number </p>
+            </div>
+            <div id="main">
+               <form action="" id="form">
+                 <label for="InputNum" style="text-align: center;"> <h1>Guess a Number</h1></label>
+                <input type="text" id="InputNum" style="width: 50%; margin: 0px auto;" placeholder="Enter the guessed Number">
+                <!-- <button type="submit">Submit Guess</button> -->
+                 <input id="submit-btn" type="submit" value="Submit Guess" style="background-color: green;color: white;width: 50%;height: 5vh;margin: 0px auto;">
+                </form>
+                 <button id="reset" style="background-color: skyblue;color: white;width: 30%;height: 5vh;margin: 0px auto;">Reset</button>
+                <h5 >Previous Guesses : <span id="prev-guesses"></span>  </h5>
+                <h5 >Guesses Remaining : <span id="guess-rem"></span> </h5>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+<script src="./4_script.js">
+
+</script>
+</html>

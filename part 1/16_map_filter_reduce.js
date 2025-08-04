@@ -28,7 +28,7 @@ const returnedValueMap=arr.map((e)=>(e*10))
 console.log(returnedValueMap);
 
 
-//Reduce -> also returns value
+//Reduce -> returns  a single final value
 
 const arr2 =[1,2,3,4]
 const initialValue =0

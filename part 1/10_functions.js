@@ -8,7 +8,7 @@ const calculateCartItemPrice=(...items)=>{ // now this(...) working as rest oper
    return items
 }
 
-console.log(calculateCartItemPrice(24,5,45,45,453,334,3434)); // will get array from rest operator
+console.log(calculateCartItemPrice(24,5,45,45,453,334,3434)); // will get array from rest operator , inka array bnaker dedega
 
 const user={
       name:"rajnish",

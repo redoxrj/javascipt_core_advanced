@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #343434;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    const body = document.querySelector('body')
+    // console.log(body);
+    let startRef=null;
+
+    function genrateRandomBgColor (){
+        //4 :36
+        const hexArray= ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+        let hexCode='#'
+
+        for(let i=0;i<6;i++){
+            hexCode+= hexArray[ (Math.floor(Math.random()*16)) ]
+
+        }
+        // console.log(hexCode);
+        body.style.backgroundColor=hexCode
+        
+    }
+
+    start.addEventListener('click',()=>{
+        if(startRef===null){
+        startRef= setInterval(genrateRandomBgColor,1000)
+        }
+    })
+
+    stop.addEventListener('click',()=>{
+        clearInterval(startRef)
+        startRef=null
+    })
+    
+    
+</script>
+</html>

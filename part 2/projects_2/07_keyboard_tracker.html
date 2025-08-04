@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #343434;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"> <h2>Press any key and see the magic! </h2></div>
+    
+</body>
+<script>
+    const main = document.querySelector('#main')
+    // console.log(window);
+    window.addEventListener('keydown',(e)=>{
+    // console.log(e);
+    console.log(e.keyCode);
+    console.log(e.key);
+    console.log(e.code);
+    e.preventDefault()
+
+    main.innerHTML=`<table>  
+        <thead>
+            <tr>
+            <th>Key  </th>
+            <th>KeyCode  </th>
+            <th>Code  </th>
+            </tr>
+          </thead>  
+         
+
+           <tbody>
+             <tr>
+                   
+           <td>${e.key===' ' ? "space" :e.key }    </td> 
+           <td>${e.keyCode}    </td> 
+           <td>${e.code}    </td> 
+                </tr> 
+          </tbody>  
+        
+        </table>`
+
+    
+    })
+
+    document.addEventListener('contextmenu',(e)=>{
+        e.preventDefault()
+        alert("right click not allowed")
+        window.close()
+    })
+
+    
+</script>
+</html>

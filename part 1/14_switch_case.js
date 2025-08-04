@@ -47,10 +47,10 @@ console.log(a);
 console.log(b);
 
 //false values => false,0,-0,BigInt 0n, null, undefined ,"" ,NaN
-// rest others are considered as truthy values even empty [] and {}
+// rest all/ others are considered as truthy values even empty [] and {}
 
 
-//OR operator
+//OR operator (deals with truthy value just like if else unlike ?? opeator)
 
 // const ok=undefined
 // const ok=null
@@ -63,6 +63,8 @@ const okAnd =45
 console.log(ok && "&& value"); // && operator -> it means here if ok is true then print  the this one(next one) else print that one(currnet one)
 
 console.log(okAnd && "&& value"); // && operator -> it means here if ok is true then print  the this one(next one) else print that one(currnet one)
+
+if(!false) console.log("YO, if one liner")
 
 
 

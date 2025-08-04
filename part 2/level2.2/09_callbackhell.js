@@ -145,10 +145,10 @@ const delay =(time,step)=>{
 //approach 4: more best opti hehe | implicit return + .then chaining , agar khaali return krwana ho to
 
 // delay(1000,1)
-// .then(()=>(delay(1000,2)))
-// .then(()=>(delay(1000,3)))
-// .then(()=>(delay(1000,4)))
-// .then(()=>(delay(1000,5)))
+// .then(()=>(return delay(1000,2)))
+// .then(()=>( return delay(1000,3)))
+// .then(()=>(return delay(1000,4)))
+// .then(()=>(return delay(1000,5)))
 // .catch((error)=>{
 //     console.log(error);
     

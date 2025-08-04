@@ -4,8 +4,10 @@
  // dono trah se objects bantey hai constructor se bhi or litrals se bhi(difference only of singleton)
 
 //  Object.create()  //1.  yhi hai constructor wala
+const obj  = new Object()  // empty singlton object milega/hoga
 //----------------------------------------------------------------//
  //2.Objects Literals
+ const obj2 = {} // empty non-singlton object milega/hoga
 
  const mySymbol = Symbol('Unique Key')
  const mySymbol2 = Symbol('Unique Key')
@@ -42,13 +44,14 @@ console.log(user[mySymbol]);
 console.log(typeof user[mySymbol]); // type will remain the same but is now using as a symbol
 
 // console.log(user.age);
-// Object.freeze(user); // now the object becomes constant , nothing can be changed
+// Object.freeze(user); // now the object becomes constant , nothing can be changed(error ni dega wo baat alg h)
 // user.age=3434
 // user.haha="haha"
 // console.log(user.age);
 // console.log(user.haha);
 
 console.log(typeof user.greet1);
+console.log(user.greet1);  // abbhi ye func execute ni hua hai khaali defintion/regernce milega func ka
 console.log(user.greet1());
 // cannnot use this.  in arrow functions(arrow functions ka khud ka this ni hota)
 // user.greet2=()=>{
