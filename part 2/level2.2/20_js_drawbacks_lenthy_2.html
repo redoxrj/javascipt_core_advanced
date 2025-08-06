@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #343434;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- HTML DOM: onclick="func"  Just a string; browser doesn’t auto-call it
+    React JSX: onClick={func} React knows it's a function and calls it on click
+   that's why we have to execute the function in pure html unlike react jsx  where we just pass the func refernce joki shi bhi h wrna whi fucntion execute hojaga react mein only-->
+   <!-- also we have to use onclick(lowercase) in plain js and onClick(camelcase) in reactjs otherwise won't work in respec. -->
+   
+    <!-- <button id="increment" onClick="increaseValueEveryWhere()">Increase Value Everywhere</button> -->
+    <button id="increment" >Increase Value Everywhere</button>
+    <h1 id="main">Counter Value : 15</h1>
+    <h2 id="main2">Counter Value : 15</h2>
+    <h3 id="main3">Counter Value : 15</h3>
+    <p id="main4">Counter Value : 15</p>
+
+
+    
+</body>
+<script>
+    let counter =15
+
+    let increment= document.getElementById('increment')
+    let main= document.getElementById('main')
+    let main2= document.getElementById('main2')
+    let main3= document.getElementById('main3')
+    let main4= document.getElementById('main4')
+
+    
+    const  increaseValueEveryWhere=  ()=>{
+        // console.log("hello",Math.random());   
+        counter++
+        console.log(counter);
+        main.innerHTML=`Counter Value : ${counter}`
+        main2.innerHTML=`Counter Value : ${counter}`
+        main3.innerHTML=`Counter Value : ${counter}`
+        main4.innerHTML=`Counter Value : ${counter}`
+
+        // very painful to update the variable(its curent state) value in UI/dom by doing this(manually updating values) all everywhere/wherever the variable is used in vanilaaJs, that's why react
+        
+    }
+    increment.addEventListener('click',increaseValueEveryWhere)
+
+    //Arrow functions (and const/let variables) are never hoisted but normal func's are
+    // addEventListener('click', func()) ❌ 	Executes immediately, not on click
+    // addEventListener('click', func)   ✅ executes on/after click (BEST)
+     
+    // addEventListener('click', () => func()) ✅ (if func defined first in case of arrow func else refrence error ) ❌ (NOT reccomnanded) Adds unnecessary anonymous function
+
+
+</script>
+</html>
