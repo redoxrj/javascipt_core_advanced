@@ -29,16 +29,14 @@ function sayHelloName (username){
 const higherOrderFunctionComplex= (func)=>(func)=>{func(username)}
 
 
-higherOrderFunctionComplex(sayHelloName('raju')) // worked ,but
+higherOrderFunctionComplex(sayHelloName('raju')) // worked accidendmatly ,but not correct
 */
 
 //MORE better
 const higherOrderFunctionComplex = (func)=>{
-  return (username)=>{  // here the highrt order func rerturnig  that given func but with a parmater
-    func(username)
-
-  }
+  return (username)=>{func(username)}
+  // here the highrt order func rerturnig a func that accepts a paramter and  executues the given func with that paramter 
 }
 
-const wrappedFunction = higherOrderFunctionComplex(sayHelloName)
-wrappedFunction('shyaam')
+const wrapped= higherOrderFunctionComplex(sayHelloName) // now wrapped became a function now since higherOrderFunctionComplex retuned a function accepting some parmater
+wrapped('shyaam')
